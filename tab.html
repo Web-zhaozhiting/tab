@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <title>tab选项卡</title>
     <style>
-    *{margin: 0;padding: 0;}
     </style>
-    
+    <link rel="stylesheet" href="tab.css">
 </head>
 <body>
-    
+    <div class="tab">
+        <ul class="tab-nav clearfix">
+            <li class="active"><a href="javascript:;">新闻</a></li>
+            <li><a href="javascript:;">娱乐</a></li>
+            <li><a href="javascript:;">电影</a></li>
+            <li><a href="javascript:;">科技</a></li>
+        </ul>  
+         <!-- 内容 -->
+        <div class="content-wrap" id='content'>
+            <div class="content-item current"><img src="img/a.jpg" alt="a"></div>
+            <div class="content-item"><img src="img/b.jpg" alt="b"></div>
+            <div class="content-item"><img src="img/c.jpg" alt="c"></div>
+            <div class="content-item"><img src="img/d.jpg" alt="d"></div>
+        </div>   
+    </div>
+   <script>
+       function tab(){
+            var tabNav = document.getElementsByClassName('tab-nav');
+            var li = document.getElementsByTagName('li');
+            var content = document.getElementById('content');
+            var item = content.getElementsByTagName('div');        
+            // 遍历li
+            for(var i =0;i<li.length;i++){
+                // 设置锚点
+                li[i].index=i;
+                li[i].onmouseover=function(){
+                    for (var j = 0; j < li.length; j++) {
+                        li[j].className="";                               
+                    }
+                    this.className="active";
+                    for (var k = 0; k < item.length; k++) {
+                        item[k].style.display="none";                               
+                    }
+                    item[this.index].style.display='block'
+                }
+            }  
+       }
+       tab()
+
+   </script>
 </body>
 </html>
