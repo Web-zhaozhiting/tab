@@ -5,10 +5,17 @@
     <title>tab选项卡</title>
     <style>
     </style>
-    <link rel="stylesheet" href="tab.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/tab.js"></script>
 </head>
 <body>
-    <div class="tab">
+    <div class="tab js-tab" data-config='{
+                                        "triggerType":"mouseover",
+                                        "effect":"fade",
+                                        "invoke":"2",
+                                        "auto":"3000"
+                                        }'>
         <ul class="tab-nav clearfix">
             <li class="active"><a href="javascript:;">新闻</a></li>
             <li><a href="javascript:;">娱乐</a></li>
@@ -23,7 +30,7 @@
             <div class="content-item"><img src="img/d.jpg" alt="d"></div>
         </div>   
     </div>
-   <script>
+   <!-- <script>
        function tab(){
             var tabNav = document.getElementsByClassName('tab-nav');
             var li = document.getElementsByTagName('li');
@@ -47,6 +54,16 @@
        }
        tab()
 
+   </script> -->
+
+   <script>
+   $(function(){
+
+    //tab
+    var tab1 = new Tab($('.js-tab').eq(0));
+
+   });
+   
    </script>
 </body>
 </html>

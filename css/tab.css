@@ -42,10 +42,12 @@ a{text-decoration: none;}
     background-color: #fff;
     padding: 5px;
     height: 200px;
+    position: relative;
 }
 .tab .content-wrap .content-item{
     height: 200px;
     display: none;
+    position: absolute;
 }
 .tab .content-wrap .content-item img{width: 290px;height: 200px;}
 .tab .content-wrap .current{display: block}
